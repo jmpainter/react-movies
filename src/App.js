@@ -33,8 +33,8 @@ function App() {
   console.log(movies);
   return (
     <div className="App">
-      <Header />
       <Router>
+        <Header />
         <Route
           path="/"
           exact

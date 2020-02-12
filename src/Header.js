@@ -1,5 +1,6 @@
 import React from "react";
 import SearchBar from "./SearchBar";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -11,7 +12,11 @@ export default function Header() {
         borderBottom: "1px solid grey"
       }}
     >
-      <h1>Wookie Movies</h1>
+      <h1>
+        <Link to="/" style={{ color: "white" }}>
+          Wookie Movies
+        </Link>
+      </h1>
       <SearchBar />
     </div>
   );
