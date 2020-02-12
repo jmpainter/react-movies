@@ -11,7 +11,13 @@ export default function MovieDetail({ movies = [], match = {} }) {
       <img
         src={movie.poster}
         alt="poster"
-        style={{ float: "left", width: "250px", margin: "20px" }}
+        style={{
+          float: "left",
+          width: "250px",
+          margin: "20px",
+          position: "relative",
+          top: "-12px"
+        }}
       />
       <h1>{movie.title}</h1>
       <StarsRating rating={movie.imdb_rating} />

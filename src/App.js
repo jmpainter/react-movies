@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./Header";
 import MoviesByGenre from "./MoviesByGenre";
 import MovieDetail from "./MovieDetail";
+import MovieSearch from "./MovieSearch";
 import moviesData from "./movies";
 
 function App() {
@@ -43,6 +44,10 @@ function App() {
         <Route
           path="/detail/:id"
           render={props => <MovieDetail movies={movies} {...props} />}
+        />
+        <Route
+          path="/search/:term"
+          render={props => <MovieSearch movies={movies} {...props} />}
         />
       </Router>
     </div>

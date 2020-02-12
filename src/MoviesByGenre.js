@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import GenreRow from "./GenreRow";
 
 export default function MoviesByGenre({ movies = [] }) {
