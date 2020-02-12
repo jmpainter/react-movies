@@ -4,34 +4,24 @@ import Header from "./Header";
 import MoviesByGenre from "./MoviesByGenre";
 import MovieDetail from "./MovieDetail";
 import MovieSearch from "./MovieSearch";
-import moviesData from "./movies";
 
 function App() {
   const [movies, setMovies] = useState([]);
 
-  // useEffect(() => {
-  //   fetch("https://wookie.codesubmit.io/movies", {
-  //     method: "GET",
-  //     headers: {
-  //       Authorization: "Bearer Wookie2019"
-  //     }
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       const genres = [];
-  //       data.movies.forEach(movie => {
-  //         movie.genres.forEach(genre => genres.push(genre));
-  //       });
-
-  //       setGenres([...new Set(genres)]);
-  //     });
-  // }, []);
-
   useEffect(() => {
-    setMovies(moviesData);
+    fetch("https://wookie.codesubmit.io/movies", {
+      method: "GET",
+      headers: {
+        Authorization: "Bearer Wookie2019"
+      }
+    })
+      .then(res => res.json())
+      .then(data => {
+        setMovies(data.movies);
+      })
+      .catch(error => console.error(error));
   }, []);
-  console.log("FROM APP");
-  console.log(movies);
+
   return (
     <div className="App">
       <Router>

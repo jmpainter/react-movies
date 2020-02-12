@@ -1,7 +1,10 @@
 import React from "react";
 import GenreRow from "./GenreRow";
 
-export default function MoviesByGenre({ movies = [] }) {
+export default function MoviesByGenre({ movies }) {
+  if (!movies || movies.length === 0) {
+    return <div style={{ margin: "30px" }}>Loading...</div>;
+  }
   let totalGenres = [];
   movies.forEach(movie => {
     movie.genres.forEach(genre => totalGenres.push(genre));
